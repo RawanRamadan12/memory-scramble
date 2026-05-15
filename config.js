@@ -1,4 +1,3 @@
-
 // config.js
 function getConfig() {
   return {
@@ -13,9 +12,11 @@ function validateConfig(rows, cols) {
     alert("Board size (rows × columns) must be even!");
     return false;
   }
+
   if (rows < 2 || cols < 2) {
     alert("Minimum board size is 2×2");
     return false;
   }
+
   return true;
 }

@@ -77,3 +77,34 @@ function winGame() {
   clearInterval(timerInterval);
   setTimeout(() => alert("🎉 You Win! All pairs matched!"), 300);
 }
+function startTimer(seconds) {
+  let remaining = seconds;
+  const display = document.getElementById('timer');
+  display.textContent = ⏱️ ${remaining}s;
+
+  timerInterval = setInterval(() => {
+    remaining--;
+    display.textContent = ⏱️ ${remaining}s;
+    if (remaining <= 0) {
+      clearInterval(timerInterval);
+      gameOver();
+    }
+  }, 1000);
+}
+
+function gameOver() {
+  // Flip all cards face-down and show game over message
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('flipped'));
+  document.getElementById('message').textContent = "💀 Game Over! Time's up!";
+  document.getElementById('message').style.display = 'block';
+  document.getElementById('game-board').style.pointerEvents = 'none';
+}
+
+function startGame() {
+  clearInterval(timerInterval);
+  document.getElementById('message').style.display = 'none';
+  const { rows, cols, timeLimit } = getConfig();
+  if (!validateConfig(rows, cols)) return;
+  generateBoard(rows, cols);
+  startTimer(timeLimit);
+}
