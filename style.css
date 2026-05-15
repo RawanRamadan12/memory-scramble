@@ -1,0 +1,16 @@
+body { font-family: Arial, sans-serif; text-align: center; background: #1a1a2e; color: white; }
+h1 { margin: 20px; font-size: 2em; }
+#config-panel { margin: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+#config-panel input { width: 60px; padding: 5px; border-radius: 5px; border: none; }
+#config-panel button { padding: 8px 20px; background: #e94560; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; }
+#timer { font-size: 1.5em; margin: 10px; color: #f5a623; }
+#message { font-size: 1.8em; color: #e94560; margin: 10px; display: none; }
+#game-board { display: grid; gap: 10px; justify-content: center; padding: 20px; max-width: 700px; margin: auto; }
+
+.card { width: 80px; height: 80px; cursor: pointer; perspective: 600px; }
+.card-inner { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.5s; }
+.card.flipped .card-inner, .card.matched .card-inner { transform: rotateY(180deg); }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2em; }
+.card-front { background: #16213e; border: 2px solid #e94560; }
+.card-back { background: #0f3460; transform: rotateY(180deg); }
+.card.matched .card-back { background: #1a6640; border: 2px solid #2ecc71; }

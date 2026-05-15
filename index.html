@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Scramble</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🃏 Memory Scramble</h1>
+
+  <div id="config-panel">
+    <label>Rows: <input type="number" id="rows" value="4" min="2"></label>
+    <label>Columns: <input type="number" id="cols" value="4" min="2"></label>
+    <label>Time (sec): <input type="number" id="timeLimit" value="60" min="10"></label>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <div id="timer">⏱️ --</div>
+  <div id="message"></div>
+  <div id="game-board"></div>
+
+  <script src="config.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
